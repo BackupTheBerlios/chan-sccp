@@ -1,0 +1,36 @@
+This file contains the name of the people who have contributed to
+chan-sccp. The names are sorted alphabetically.
+
+Jan Czmok:
+
+	- support for cisco 7920 and other phones
+	- maintainer of experimental version of chan-sccp
+
+Jared Mauch:
+
+	- Timezone Patch
+	- CVS HEAD compiler fixes
+
+Siggi Langauf:
+	
+	- help with decoding the sccp protocol
+	- did cvs syncup back to Theo.
+
+veejoe:
+	- Multiline Patch 
+
+Theo Peter Zourzouvillys:
+
+	- the original code contributor :-)
+	- done a great job by fiddling the basics together
+
+JulienG:
+
+	- Hangup Patch
+	- LED, Beeper & Display fixes
+
+... and many thanks to the people i forget to mention.
+... write a mail and i'll add you :-)
+
+--jan
+

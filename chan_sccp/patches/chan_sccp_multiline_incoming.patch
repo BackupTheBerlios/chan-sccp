@@ -1,0 +1,36 @@
+diff -u chan_sccp/sccp_actions.c chan_sccp.new/sccp_actions.c
+--- chan_sccp/sccp_actions.c	2004-01-24 08:04:16.000000000 +1000
++++ chan_sccp.new/sccp_actions.c	2004-02-10 10:28:54.000000000 +1000
+@@ -339,18 +339,23 @@
+   if (sccp_debug)
+     ast_verbose(VERBOSE_PREFIX_3 "Device d=%p s=%p s->d->s=%p Taken Offhook\n", s->device, s, s->device->session);
+ 
+-  // Check if there is a call comming in on our currently selected line.
+-  l = sccp_dev_get_activeline(s->device);
++  // Check if there is a call coming in on any of our lines.
++  l = s->device->lines;
+ 
+-  chan = l->channels;
+-  while (chan) {
+-    if (chan->isRinging)
++  while (l) {
++    ast_verbose(VERBOSE_PREFIX_3 "Checking line %s for incoming call\n", l->name);
++    chan = l->channels;
++    while (chan) {
++      ast_verbose(VERBOSE_PREFIX_3 "Checking channel for incoming call: %d\n",chan->isRinging);
++      if (chan->isRinging)
++        break;
++      chan = chan->next;
++    }
++    if (chan)  // Did we find one?
+       break;
+-    chan = chan->next;
++    l = l->next;
+   }
+-
+-  // s->device->currentLine->dnState = DsSeize;
+-
++ 
+   if (chan) {
+ 
+     // Answer the ringing channel.

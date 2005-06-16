@@ -1,0 +1,41 @@
+Supported Devices on chan-sccp
+------------------------------
+
+Last update: 2004-06-19
+
+We support the following devices within chan-sccp, however 
+some limitations exist. Please read the sections covering
+your hardware.
+
+Cisco:
+------
+
+Cisco 7910:	Supported.
+
+Cisco 7920:	This Wireless VOIP Phone works with asterisk and chan-sccp.
+		Some functions e.g. Conference on the phone itself and Call
+		Transfer are not fully implemented and currently limited
+		by design.
+
+		Support Status: beta, but functional
+
+Cisco 7960:	Supported.
+Cisco 7940:	Supported.
+
+Cisco 7902:	Supported.
+Cisco 7905:	Supported.
+Cisco 7912:	Supported
+
+Cisco 12SP+:	Mostly works, few small issues.
+Cisco 30VIP:	Same applies as Cisco 12SP+
+
+
+Not supported Devices (or not recommended):
+-------------------------------------------
+
+Cisco 7970:	Beta support, still highly unreliable.
+
+Cisco 7935:	Beta support
+Cisco 7936:	Should be same as 7935, cannot confirm, please send reports
+
+Cisco Extension 7914:	Beta support, works with 7960, and with mods the 7940
